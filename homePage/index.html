@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School home base</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/44c71694fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <div id="page_name">
+            <h1>Home</h1>
+        </div>  
+    </div>
+
+    <hr id="separating-line"/>
+    
+    <div id="backgroundDiv" ></div>
+
+    
+    <div class="button-menu">
+        <Button id="calendarBtn" class="linkBtn" onclick="goToPage('../calendarPage/calendarIndex.html')"><i class="fas fa-calendar-alt nav-icon"></i>Calendar</Button>
+        <Button id="toDoBtn" class="linkBtn" onclick="goToPage('../toDoList/toDoIndex.html')"><i class="fas fa-list nav-icon"></i>To-Do</Button>
+        <Button id="notesBtn" class="linkBtn" onclick="goToPage('../notes/notesIndex.html')"><i class="fas fa-sticky-note nav-icon"></i>notes</Button>
+        <Button id="calculatorBtn" class="linkBtn" onclick="goToPage('../calculator/calculatorIndex.html')"><i class="fas fa-calculator nav-icon"></i>Calculator</Button>
+        <Button id="studyBtn" class="linkBtn" onclick="goToPage('../studyPage/studyIndex.html')"><i class="far fa-edit nav-icon"></i></i>Study</Button>
+        <Button id="learnBtn" class="linkBtn" onclick="goToPage('../learnPage/learnIndex.html')"><i class="fas fa-chalkboard nav-icon"></i>Learn</Button>
+        <Button id="aboutBtn" class="linkBtn" onclick="goToPage('../aboutPage/aboutIndex.html')"><i class="fas fa-info-circle nav-icon"></i>About</Button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

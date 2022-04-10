@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr{
+    background-color: #464646;
+    height: 1px;
+    border: none;
+}
+
+#navbar {
+    /*background-color: #212121;*/
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.menu-bars{
+    margin-left: 2rem;
+    font-size: 2rem;
+    /*color: #fff;*/
+    color: black;
+}
+
+#nav-menu{
+    background-color: #212121;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+}
+
+#nav-menu.active{
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-text {
+    display:flex;
+    justify-content: start;
+    list-style: none;
+    height: 50px;
+    padding: 1rem;
+}
+
+.nav-text a{
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.nav-text:hover{
+    background-color: rgba(144,144,144,0.219);
+    cursor: pointer;
+}
+
+.nav-menu-items{
+    width:100%;
+}
+
+.nav-icon {
+    padding-right: 1rem;
+    color: #909090;
+}
+
+#navbar-toggle{
+    background-color: #212121;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#navbar-toggle h1{
+    color: #fff;
+    font-family: 'arial', sans-serif;
+}
+
+#navbar-toggle a {
+    text-decoration: none;
+}
+
+#menu-bar1{
+    color: black;
+}
+#menu-bar2{
+    color: white;
+}
+
+.nav-section {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#separating-line{
+    height: 5px;
+}
+
+#page_name{
+    height: 400px;
+    width: 1500px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+/* the To-Do List*/
+#to-doArea{
+    /*margin: auto;*/
+    position:absolute;
+    background-color: cornflowerblue;
+    top: 150px;
+    left: 25%;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    border-radius: 10px;
+    height: 500px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+#toDoInput{
+    position:fixed;
+    bottom:10px;
+    left:30%;
+}
+
+#addBtn{
+    width: 100px;
+    font-size: large;
+    background-color:lightgreen;
+    height:50px;
+}
+
+#clearBtn{
+    width: 100px;
+    font-size: large;
+    background-color:red;
+    height:50px;
+}
+
+#textInput{
+    height:50px;
+    width:300px;
+    font-size: large;
+}
+
+.checkBtn{
+    position:absolute;
+    background-color: lightgreen;
+    width:50px;
+    right:70px;
+
+}
+
+.removeBtn{
+    position:absolute;
+    background-color:red;
+    width:50px;
+    right:20px;
+
+}
+
+.thingOnList{
+    width: 99%;
+    background-color: white;
+    font-size: large;
+}

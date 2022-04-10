@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+hr{
+    background-color: #464646;
+    height: 1px;
+    border: none;
+}
+
+#navbar {
+    /*background-color: #212121;*/
+    /*background-color: #f5f5f5;*/
+    height: 100px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.nav-icon {
+    padding-right: 1rem;
+    color: black;
+
+}
+
+#separating-line{
+    height: 5px;
+}
+
+#page_name{
+    height: 50px;
+    width: 100px;
+    position:absolute;
+    top:40px;
+    left:45%;
+    color: black;
+}
+
+#backgroundDiv{
+    position:absolute;
+    height:650px;
+    width:100%;
+    top:105px;
+    background-image: url("../images/pic-of-chalk-board.jpg");
+    background-repeat: no-repeat;
+    background-size:60%;
+    background-position-x: 45%;
+    background-position-y: 75%;
+}
+
+.button-menu{
+    position:absolute;
+    top:25%;
+    left:35%;
+    height:485px;
+    width:410px;
+    
+}
+
+.linkBtn{
+    width: 400px;
+    height:50px;
+    border: 1px solid black;
+    font-size: large;
+    margin-top:20px;
+    border-radius: 50px;
+}
+
+#calendarBtn{
+    background-color: rgb(255, 0, 0);
+}
+
+#toDoBtn{
+    background-color: rgb(255, 115, 0);
+}
+
+#notesBtn{
+    background-color: rgb(255, 255, 0);
+}
+
+#calculatorBtn{
+    background-color: rgb(0, 255, 0);
+}
+#studyBtn{
+    background-color: rgb(0, 255, 255);
+}
+
+#learnBtn{
+    background-color: rgb(195, 0, 255);
+}
+
+#aboutBtn{
+    background-color: rgb(255, 0, 212);
+}

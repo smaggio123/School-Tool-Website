@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="CalculatorStyle.css">
+    <script src="https://kit.fontawesome.com/44c71694fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#" class="menu-bars" id="show-menu">
+            <i id=menu-bar1 class="fas fa-bars"></i>
+        </a>
+        <div id="page_name">
+            <h1>Calculator</h1>
+        </div>
+    </div>
+    <nav id="nav-menu">
+        <ul class="nav-menu-items">
+            <div id="navbar-toggle">
+                <a href="#" class="menu-bars" id="hide-menu">
+                    <i id="menu-bar2" class="fas fa-bars nav-icon"></i>
+                </a>
+                <a href="#"><h1>Menu</h1></a>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calendarPage/calendarIndex.html"><i class="fas fa-calendar-alt nav-icon"></i>Calendar</a></li>
+                <li class="nav-text"><a href="../toDoList/toDoIndex.html"><i class="fas fa-list nav-icon"></i></i>To-Do</a></li>
+                <li class="nav-text"><a href="../notes/notesIndex.html"><i class="fas fa-sticky-note nav-icon"></i>notes</a></li>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calculator/calculatorIndex.html"><i class="fas fa-calculator nav-icon"></i>Calculator</a></li>
+                <li class="nav-text"><a href="../studyPage/studyIndex.html"><i class="far fa-edit nav-icon"></i></i>Study</a></li>
+                <li class="nav-text"><a href="../aboutPage/aboutIndex.html"><i class="fas fa-info-circle nav-icon"></i>About</a></li>
+            </div>
+        </ul>
+    </nav>
+    <hr id="separating-line"/>
+
+    <div id="basicCalculator">
+        <h1>Basic Calculator</h1>
+        <div id="num1Area" class="basicCalculatorElement">
+            <label>num1:</label>
+            <input type="number" id="firstInput"/>
+        </div>
+        <div id="operatorArea" class="basicCalculatorElement">
+            <label>Operator:</label>
+            <select id="operatorInput">
+                <option id="add" value=0>+</option>
+                <option id="minus" value=1>-</option>
+                <option id="multiply" value=2>*</option>
+                <option id="divide" value=3>/</option>
+                <option id="power" value=4>^</option>
+                <option id="module" value=5>%</option>
+                <option id="squareRoot" value=6>#√</option>
+            </select>
+        </div>
+
+        <div id="num2Area" class="basicCalculatorElement">
+            <label>num2(#):</label>
+            <input type="number" id="secondInput"/>
+        </div>
+        <div id="answerArea" class="basicCalculatorElement">
+            <label>answer:</label>
+            <span id="answer" >###</span>
+        </div>
+        <button id="calculateBtn" onclick="calculate()" class="basicCalculatorElement">calculate</button>
+        
+    </div>
+    <div id="makeBox">
+        <div id="solveLinearEquation">
+            <h1>Solve For X</h1>    
+            <h2>Linear Equation</h2>
+            <input type="number" class="numberInput" id="LinearEquation-M-Num"/>
+            x
+            <select id="MToBOperatorInput">
+                <option id="plus" value=0>+</option>
+                <option id="minus" value=1>-</option>
+            </select>
+            <input type="number" class="numberInput" id="LinearEquation-B-Num"/>
+            =
+            <input type="number" class="numberInput" id="LinearEquation-Y-Num"/>
+            <div>
+                <h4 id="LinearEquation-x-value" class="linearEquationElement">x=</h4>
+                <button onclick="solveLinearEquation()" class="linearEquationElement">Solve</button>
+
+            </div>
+        </div>
+        <hr id="inbetweenMaths"/>
+        <div id="solveQuadratic">
+            <h2 >Quadratic Equation</h2>
+            <input type="number" class="numberInput" id="Quadratic-A-Num"/>
+            x<sup>2</sup>
+            + 
+            <input type="number" class="numberInput" id="Quadratic-B-Num"/>
+            x + 
+            <input type="number" class="numberInput" id="Quadratic-C-Num"/>
+            =
+            <input type="number" class="numberInput" id="Quadratic-Y-Num"/>
+                <h4 id="Quadratic-x-value" class="quadraticEquationElement">x=
+                </h4>
+                <button onclick="solveQuadric()" class="quadraticEquationElement">Solve</button>
+        </div>
+    </div>
+
+    <div id="pythagoreanTheoremCalculator">
+        <h1 class="header">Pythagorean Theorem</h1>
+        <label>a(leg)=</label><input type="number" class="numberInput" id="Pythagorean-A-Num"/>
+        <label>b(leg)=</label><input type="number" class="numberInput" id="Pythagorean-B-Num"/>
+        <h4 id="Pythagorean-C-value" class="ptcElement">c=</h4>
+        <button class="ptcElement" onclick="solvePythagorean()">Solve</button>
+    </div>
+
+    <div id="angleToRadii" class="converterDiv">
+        <h1>Convert Degrees and Radii</h1>
+        <div class="converterElement">
+            <label class="converterElement">radii: </label><input type="number" class="numberInput" id="RadiiInput"/>
+            <div class="converterElement">
+                <h4 id="convertedDegrees">Degrees: </h4>
+                <button class="converterElement" onclick="convertRadiiToDegrees()">Convert</button>
+            </div>
+        </div>
+        <div class="converterElement">
+            <label class="converterElement">degrees: </label><input type="number" class="numberInput" id="DegreesInput"/>
+            <div class="converterElement">
+                <h4 id="convertedRadii">Radii:</h4>
+                <button class="converterElement" onclick="convertDegreesToRadii()">Convert</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="RNGInfo">
+        <h1 id="RNGHeader">Random Number Generator</h1>
+        <div>
+            <label id="minDisplay" class="RNGLabel">min</label>
+            <label id="maxDisplay" class="RNGLabel">max</label>
+            <label id="numDisplay" class="RNGLabel">Your Number</label>
+        </div>
+        <div id="RNGIODiv">
+            <input id="minInput" class="RNGIODisplay" type="number"/>
+            <input id="maxInput" class="RNGIODisplay" type="number"/>
+            <div id="yourNumberDisplay" class="RNGIODisplay"></div>
+        </div>
+
+
+
+    </div>
+
+    
+    <script src="calculatorApp.js"></script>
+</body>
+</html>

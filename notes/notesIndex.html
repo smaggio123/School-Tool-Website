@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="notesStyle.css">
+    <script src="https://kit.fontawesome.com/44c71694fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#" class="menu-bars" id="show-menu">
+            <i id="menu-bar1" class="fas fa-bars"></i>
+        </a>
+        <div id="page_name">
+            <h1>Notes</h1>
+        </div>
+    </div>
+    <nav id="nav-menu">
+        <ul class="nav-menu-items">
+            <div id="navbar-toggle">
+                <a href="#" class="menu-bars" id="hide-menu">
+                    <i id="menu-bar2" class="fas fa-bars nav-icon"></i>
+                </a>
+                <a href="#"><h1>Menu</h1></a>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calendarPage/calendarIndex.html"><i class="fas fa-calendar-alt nav-icon"></i>Calendar</a></li>
+                <li class="nav-text"><a href="../toDoList/toDoIndex.html"><i class="fas fa-list nav-icon"></i></i>To-Do</a></li>
+                <li class="nav-text"><a href="../notes/notesIndex.html"><i class="fas fa-sticky-note nav-icon"></i>notes</a></li>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calculator/calculatorIndex.html"><i class="fas fa-calculator nav-icon"></i>Calculator</a></li>
+                <li class="nav-text"><a href="../studyPage/studyIndex.html"><i class="far fa-edit nav-icon"></i></i>Study</a></li>
+                <li class="nav-text"><a href="../aboutPage/aboutIndex.html"><i class="fas fa-info-circle nav-icon"></i>About</a></li>
+            </div>
+        </ul>
+    </nav>
+    <hr id="separating-line"/>
+    <div id="btnMenu">
+        <fieldset id="menu-frame">
+            <Button id="italicize-text" onclick="italicizeText()" class="menuBtn"><i>I</i></Button>
+            <Button id="bold-text" onclick="boldText()"class="menuBtn"><strong>B</strong></Button>
+            <Button id="underline-text" onclick="underlineText()"class="menuBtn"><u>U</u></Button>
+            <Button id="smaller-text" onclick="smallerText()"class="menuBtn"><strong>-</strong></Button>
+            <label id="size-indicator">3</label>
+            <Button id="larger-text" onclick="largerText()"class="menuBtn"><strong>+</strong></Button>
+            <Button id="undo-text" onclick="undoText()"class="menuBtn"><i class="fas fa-undo"></i></Button>
+            <Button id="redo-text" onclick="redoText()"class="menuBtn"><i class="fas fa-redo"></i></Button>
+            <Button id="highlight-text" onclick="highlightText()" class="menuBtn"><i class="fas fa-highlighter"></i></Button>
+            <Button id="indent-text" onclick="indentText()" class="menuBtn"><i class="fas fa-indent"></i></Button>
+            <!--<Button id="get-text" onclick="getAllText()" class="menuBtn">get</Button>-->
+        </fieldset>
+        
+    </div>
+    <div id="writing-area" contenteditable="true">
+        
+    </div>
+   
+
+    </textarea>
+    
+    
+    
+    <script src="notesApp.js"></script>
+    <script>
+    var size=3;
+    var clicked=[0,0,0,0];
+    function italicizeText(){
+        if(clicked[0]===0){
+            document.getElementById('italicize-text').style="background-color: grey;";
+            clicked[0]=1;
+        }
+        else if(clicked[0]===1){
+            document.getElementById('italicize-text').style="background-color: white;";
+            clicked[0]=0;
+        }
+        document.execCommand('italic',false,null);
+    }
+    function boldText(){
+        if(clicked[1]===0){
+            document.getElementById('bold-text').style="background-color: grey;";
+            clicked[1]=1;
+        }
+        else if(clicked[1]===1){
+            document.getElementById('bold-text').style="background-color: white;";
+            clicked[1]=0;
+        }
+        document.execCommand('bold',false,null);
+    }
+    function underlineText(){
+        if(clicked[2]===0){
+            document.getElementById('underline-text').style="background-color: grey;";
+            clicked[2]=1;
+        }
+        else if(clicked[2]===1){
+            document.getElementById('underline-text').style="background-color: white;";
+            clicked[2]=0;
+        }
+        document.execCommand('underline',false,null);
+    }
+    function smallerText(){
+        if(size>1){
+            size--;
+            document.execCommand('fontSize',false,size);
+            document.getElementById('size-indicator').textContent=size;
+        }
+    }
+    function largerText(){
+        if(size<6){
+            size++;
+            document.execCommand('fontSize',false,size);
+            document.getElementById('size-indicator').textContent=size;
+        }
+        
+    }
+    function undoText(){
+        document.execCommand('undo',false,size);
+    }
+    function redoText(){
+        document.execCommand('redo',false,size);
+    } 
+    
+    function highlightText(){
+        if(clicked[3]===0){
+            document.execCommand('backColor',true,'yellow');
+            clicked[3]=1;
+        }
+        else if(clicked[3]===1){
+            document.execCommand('backColor',true,"white");
+            clicked[3]=0;
+        }
+    }
+
+    function indentText(){
+        document.execCommand('indent', false, null);
+    }
+
+    function getAllText(){
+        alert(document.getElementById('writing-area').textContent);
+    }
+
+    //when enter pressed
+    /*
+    document.addEventListener('keydown',(e)=>{
+        //alert(e.keyCode);
+        
+        if(e.keyCode===9){
+            alert(document.getElementById('writing-area').textContent);
+        }
+    });
+    */
+
+    //working on double presses (does work currently for shift button)
+    /*
+    var keyPressedArr = [false];
+    document.addEventListener('keydown', (e) => {
+        //16
+        if(e.keyCode===16){
+            if(keyPressedArr[0]===false){
+                keyPressedArr[0]=true;
+            }
+            else{
+                keyPressedArr[0]=false;
+                document.getElementById('writing-area').textContent+="\\n";
+            }
+        }
+        else{
+            keyPressedArr[0]=false;
+        }
+});
+*/
+
+
+
+    </script>
+
+</body>
+</html>

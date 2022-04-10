@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study</title>
+    <link rel="stylesheet" href="studyStyle.css">
+    <script src="https://kit.fontawesome.com/44c71694fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="navbar">
+        <a href="#" class="menu-bars" id="show-menu">
+            <i id="menu-bar1" class="fas fa-bars"></i>
+        </a>
+        <div id="page_name">
+            <h1>Study</h1>
+        </div>
+    </div>
+    <nav id="nav-menu">
+        <ul class="nav-menu-items">
+            <div id="navbar-toggle">
+                <a href="#" class="menu-bars" id="hide-menu">
+                    <i id="menu-bar2" class="fas fa-bars nav-icon"></i>
+                </a>
+                <a href="#"><h1>Menu</h1></a>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calendarPage/calendarIndex.html"><i class="fas fa-calendar-alt nav-icon"></i>Calendar</a></li>
+                <li class="nav-text"><a href="../toDoList/toDoIndex.html"><i class="fas fa-list nav-icon"></i></i>To-Do</a></li>
+                <li class="nav-text"><a href="../notes/notesIndex.html"><i class="fas fa-sticky-note nav-icon"></i>notes</a></li>
+            </div>
+            <hr />
+            <div class="nav-section">
+                <li class="nav-text"><a href="../calculator/calculatorIndex.html"><i class="fas fa-calculator nav-icon"></i>Calculator</a></li>
+                <li class="nav-text"><a href="../studyPage/studyIndex.html"><i class="far fa-edit nav-icon"></i></i>Study</a></li>
+                <li class="nav-text"><a href="../aboutPage/aboutIndex.html"><i class="fas fa-info-circle nav-icon"></i>About</a></li>
+            </div>
+        </ul>
+    </nav>
+    <hr id="separating-line"/>
+
+    <div id="termsInfoArea">
+        <h2>Terms</h2>
+        <h4>(Please insert a text file)</h4>
+        <input type="file" id="termsInsertedFile"/>
+        <textarea id="termsDisplayArea" class="fileDisplay" cols="30" rows="20"></textarea>
+    </div>
+
+    <div id="definitionsInfoArea">
+        <h2>Definitions</h2>
+        <h4>(Please insert a text file)</h4>
+        <input type="file" id="definitionsInsertedFile"/>
+        <textarea id="definitionsDisplayArea" class="fileDisplay" cols="30" rows="20"></textarea>
+    </div>
+
+    <div id=generateArea>
+        <div class="fileManagementArea">
+            <h2 style="color: red;">Warning!</h2>
+            <h3>Editting the text area(s) will not affect the index cards generated</h3>
+            <h4>You have to edit the file(s)</h4>
+            <button id="generateBtn" onclick="generateFlashCards()">Generate</button>
+        </div>
+        <h2 style="position: relative; text-align: center;top:140px;">Flash Cards</h2>
+        <div id="insertThingHere" class="fileManagementArea"></div>
+    </div>
+    <Button id="leftArrow" onclick="scrollToPrevious()"><i class="fas fa-arrow-left"></i></Button>
+    <Button id="rightArrow" onclick="scrollToNext()"><i class="fas fa-arrow-right"></i></Button>
+    
+
+    <div style="position:relative; top: 900px; text-align: center;">Happy Studying!</div>
+    
+
+
+    
+
+    <script src="studyApp.js"></script>
+</body>
+</html>
